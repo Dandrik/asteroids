@@ -5,9 +5,6 @@ read commitMessage
 
 git commit -m "$commitMessage"
 
-echo 'Enter the name of the branch:'
-echo master
-
 git push --set-upstream origin main
 
 read
