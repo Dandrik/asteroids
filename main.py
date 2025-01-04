@@ -1,8 +1,3 @@
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
-#import os
-#os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'
 import pygame
 
 from player import Player
@@ -10,9 +5,6 @@ from player import Player
 from constants import *
 
 def main():
-#  print("Starting asteroids!")
-#  print("Screen width:",SCREEN_WIDTH)
-#  print("Screen height:",SCREEN_HEIGHT)
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -21,15 +13,17 @@ def main():
     dt = 0
 
     while True:
-
          for event in pygame.event.get():
              if event.type == pygame.QUIT:
                  return
-         background_color = (0, 0, 0)
-         screen.fill(background_color)
+
+         player.update(dt)
+
+         screen.fill("black")
          player.draw(screen)
          pygame.display.flip()
 
+         # limit the framerate to 60 FPS
          dt = clock.tick(60) / 1000
 
 if __name__ == "__main__":
