@@ -8,7 +8,7 @@ git commit -m "$commitMessage"
 echo 'Enter the name of the branch:'
 echo master
 
-git push origin $branch
+git push --set-upstream origin main
 
 read
 echo nelson.shane@gmail.com
