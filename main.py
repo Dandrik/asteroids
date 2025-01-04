@@ -5,6 +5,8 @@
 #os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'
 import pygame
 
+from player import Player
+
 from constants import *
 
 def main():
@@ -15,6 +17,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     clock = pygame.time.Clock()
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     dt = 0
 
     while True:
@@ -24,6 +27,7 @@ def main():
                  return
          background_color = (0, 0, 0)
          screen.fill(background_color)
+         player.draw(screen)
          pygame.display.flip()
 
          dt = clock.tick(60) / 1000

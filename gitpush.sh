@@ -5,5 +5,5 @@ read commitMessage
 
 git commit -m "$commitMessage"
 
-git push --set-upstream origin main
+git push --set-upstream origin master
 
